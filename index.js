@@ -23,6 +23,11 @@ app.post('/books', function(req, res, next) {
   res.status(200).json(books); // SEND BACK BOOKS ARRAY AS JSON
 });
 
+app.delete('/books/:hello', function(req, res, next) {
+  books.pop();
+  res.status(200).send(books);
+});
+
 app.listen(port, function () {
   console.log('Listening on port ' + port);
 });
