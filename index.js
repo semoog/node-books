@@ -23,8 +23,9 @@ app.post('/books', function(req, res, next) {
   res.status(200).json(books); // SEND BACK BOOKS ARRAY AS JSON
 });
 
-app.delete('/books/:hello', function(req, res, next) {
-  books.pop();
+app.delete('/books/:id', function(req, res, next) {
+  id = parseInt(req.params.id);
+  books.slice(id, 1); // TAKES ID FROM URL AND DELETES MATCHING VALUE FROM ARRAY
   res.status(200).send(books);
 });
 
